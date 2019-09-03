@@ -148,4 +148,39 @@ public class Main {
         return reverse == original;
 
     }
+
+    public static int sumFirstAndLastDigit(int num) {
+        if (num < 0)
+            return -1;
+
+        int firstDigit = 0, lastDigit = 0;
+
+        lastDigit = num % 10;
+
+        while (num >= 10) {
+            num /= 10;
+        }
+
+        firstDigit = num;
+
+        return firstDigit + lastDigit;
+    }
+
+    public static int getEvenDigitSum(int number) {
+        if (number < 0)
+            return -1;
+
+        int sum = 0;
+        int digit = 0;
+
+        while (number > 0) {
+            digit = number % 10;
+            if (digit % 2 == 0) {
+                sum += digit;
+            }
+            number /= 10;
+        }
+
+        return sum;
+    }
 }

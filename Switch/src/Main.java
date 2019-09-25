@@ -31,7 +31,23 @@ public class Main {
                 System.out.println("Not sure");
         }
 
+        boolean pack = canPack(2, 10, 18);
+        System.out.println(pack);
+        
+    }
 
+    public static boolean canPack(int bigCount, int smallCount, int goal) {
+        if (bigCount < 0 || smallCount < 0 || goal < 0) {
+            return false;
+        }
+        if(goal > ((bigCount * 5) + smallCount)) {
+            return false;
+        }
+
+        if((goal % 5) > smallCount) {
+            return false;
+        }
+        return true;
     }
 
     public static void printNumberInWord(int num) {
@@ -182,5 +198,118 @@ public class Main {
         }
 
         return sum;
+    }
+
+    public static boolean isPerfectNumber(int num) {
+        int sum = 0;
+        int counter = 1;
+
+        if (num < 1)
+            return false;
+
+        while (counter < num) {
+            if (num % counter == 0)
+                sum += counter;
+            counter++;
+        }
+
+        return sum == num;
+
+    }
+
+    public static int reverse (int num) {
+        int temp = 0;
+
+        if (num < 0)
+            temp = -1 * num;
+        else
+            temp = num;
+
+        if (temp < 10 && num < 0)
+            return -1 * temp;
+        else if (temp < 10)
+            return temp;
+
+        int rev = 0;
+        int digit = 0;
+
+        while (temp > 0) {
+            digit = temp % 10;
+            rev = rev * 10 + digit;
+            temp /= 10;
+        }
+
+        if (num < 0)
+            rev *= -1;
+
+        return rev;
+    }
+
+    public static int getDigitCount(int num) {
+        if (num < 0)
+            return -1;
+
+        if (num < 10)
+            return 1;
+
+        int counter = 1;
+
+        while (num > 0) {
+            counter++;
+            num /= 10;
+        }
+
+        return --counter;
+    }
+
+    public static void numberToWords(int num) {
+        int revNum = reverse(num);
+        int counter = getDigitCount(num);
+
+        if (num < 0)
+            System.out.println("Invalid Value");
+
+        int digit;
+
+        while(counter > 0) {
+            digit = revNum % 10;
+            switch(digit) {
+                case 0:
+                    System.out.println("Zero");
+                    break;
+                case 1:
+                    System.out.println("One");
+                    break;
+                case 2:
+                    System.out.println("Two");
+                    break;
+                case 3:
+                    System.out.println("Three");
+                    break;
+                case 4:
+                    System.out.println("Four");
+                    break;
+                case 5:
+                    System.out.println("Five");
+                    break;
+                case 6:
+                    System.out.println("Six");
+                    break;
+                case 7:
+                    System.out.println("Seven");
+                    break;
+                case 8:
+                    System.out.println("Eight");
+                    break;
+                case 9:
+                    System.out.println("Nine");
+                    break;
+                default:
+                    System.out.println("Zero");
+            }
+
+            revNum /= 10;
+            counter--;
+        }
     }
 }

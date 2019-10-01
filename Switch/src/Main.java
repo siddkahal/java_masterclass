@@ -33,7 +33,7 @@ public class Main {
 
         boolean pack = canPack(2, 10, 18);
         System.out.println(pack);
-        
+
     }
 
     public static boolean canPack(int bigCount, int smallCount, int goal) {

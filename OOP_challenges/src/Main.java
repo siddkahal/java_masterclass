@@ -15,26 +15,38 @@ public class Main {
         bedRoom.makeBed();
         bedRoom.getLamp().turnOn();
 
-        Printer printer = new Printer(50, true);
-        System.out.println("initial page count = " + printer.getPagesPrinted());
-        int pagesPrinted = printer.printPages(4);
-        System.out.println("Pages printed was " + pagesPrinted + " new total print count for printer = " + printer.getPagesPrinted());
+//        Printer printer = new Printer(50, true);
+//        System.out.println("initial page count = " + printer.getPagesPrinted());
+//        int pagesPrinted = printer.printPages(4);
+//        System.out.println("Pages printed was " + pagesPrinted + " new total print count for printer = " + printer.getPagesPrinted());
+//
+//        Car car = new Car(8, "Base car");
+//        System.out.println(car.startEngine());
+//        System.out.println(car.accelerate());
+//        System.out.println(car.carBreak());
+//
+//
+//        Mitsubishi mitsubishi = new Mitsubishi(6, "Outlander");
+//        System.out.println(mitsubishi.startEngine());
+//        System.out.println(mitsubishi.accelerate());
+//        System.out.println(mitsubishi.carBreak());
+//
+//        Ford Ford = new Ford(6, "Explorer");
+//        System.out.println(Ford.startEngine());
+//        System.out.println(Ford.accelerate());
+//        System.out.println(Ford.carBreak());
 
-        Car car = new Car(8, "Base car");
-        System.out.println(car.startEngine());
-        System.out.println(car.accelerate());
-        System.out.println(car.carBreak());
+        Hamburger h = new Hamburger("Basic ", "Sausage", 3.56, "White");
+        h.addHamburgerAddition1("pepper jack cheese", 0.75);
+        double h_price = h.itemizeHamburger();
 
+        HealthyBurger healthyBurger = new HealthyBurger("Bacon", 5.67);
+        healthyBurger.addHealthyAddition1("Egg", 5.43);
+        healthyBurger.addHealthyAddition2("Lentils", 3.41);
+        System.out.println("Total healthy burger price: " + healthyBurger.itemizeHamburger());
 
-        Mitsubishi mitsubishi = new Mitsubishi(6, "Outlander");
-        System.out.println(mitsubishi.startEngine());
-        System.out.println(mitsubishi.accelerate());
-        System.out.println(mitsubishi.carBreak());
-
-        Ford Ford = new Ford(6, "Explorer");
-        System.out.println(Ford.startEngine());
-        System.out.println(Ford.accelerate());
-        System.out.println(Ford.carBreak());
+        DeluxeBurger db = new DeluxeBurger();
+        db.addHamburgerAddition3("tomatoe", .30);
 
     }
 
